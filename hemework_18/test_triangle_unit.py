@@ -50,6 +50,11 @@ class TestTriangleUnit(unittest.TestCase):
     def test_is_right_angled(self):
         second = Triangle(3, 4, 5)
         self.assertTrue(second.is_right_angled())
+    
+    @unittest.expectedFailure
+    def test_is_right_angled_expected_failure(self):
+        second = Triangle(3, 5, 4)
+        self.assertTrue(second.is_right_angled())
 
     def test_is_right_triangle(self):
         second = Triangle(5, 5, 5)
